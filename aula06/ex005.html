@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body{
+            background-color: rgb(44, 113, 232);
+            color: white;
+            font: normal 18pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="msg">Clique em mim</div>
+    <div name="msg">Clique em mim</div>
+    <div class="msg">Clique em mim</div>
+
+    <script>
+    
+        POR MARCA
+
+        var p1 = window.document.getElementsByTagName('p')[0]//selecione primeiro parágrafo [0]
+        window.document.write(p1.innerHTML)//mostre texto dentro do parágrafo
+        p1.style.color='black'//pinte parágrafo selecionado
+        
+        --------------------------------------------------
+        
+        POR ID
+
+        var d = window.document.getElementById('msg') //selecionando a id 'msg' criada na div
+        d.style.background = 'green'//o valor de d no seu stylo pinte o fundo de verde
+        d.innerText = 'Estou aguardando...'//o valor de d dentro do texto escreva 'Estou aguardando...'
+        
+        --------------------------------------------------
+
+        POR NAME 
+
+        var d = window.document.getElementsByName('msg')[0]
+        d.innerText = 'Olá!'
+        
+        --------------------------------------------------
+
+        POR CLASSE
+
+        var d = window.document.getElementsByClassName('msg')[0]
+        d.innerHTML = 'class..'
+
+        --------------------------------------------------
+        
+        POR SELETOR 
+
+        var d = window.document.querySelector('div#msg')//se for id div# se for class div. etc
+        d.style.background = 'red'
+        d.style.color = 'black'
+
+    </script>
+</body>
+</html>

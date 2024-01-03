@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #area{
+            background-color: green;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            color: white;
+            font-size: 20pt;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!--
+
+    OBS. conseguimos utilizar dentro do html porém suja muito o codigo EX. abaixo:
+
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"> 
+        Interaja...
+    </div>
+
+    -->
+
+    <div id="area">
+        Interaja...
+    </div>
+
+    <script>
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)//forma mais ideal de criar eventos 
+        a.addEventListener('mouseenter', entrar)//forma mais ideal de criar eventos 
+        a.addEventListener('mouseout', sair)//forma mais ideal de criar eventos 
+
+        function clicar(){//clicar criado nome da function
+            a.innerText = 'Clicou!'
+            a.style.background = 'red'
+        }
+
+        function entrar(){//entrar criado nome da function
+            a.innerText = 'Entrou'
+        }
+        
+        function sair(){//sair criado nome da function
+            a.innerText = 'Sair'
+            a.style.background = 'green'
+        }
+    </script>
+</body>
+</html>

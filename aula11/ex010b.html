@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasileiro ou Estrangeiro</title>
+    <style>
+        #formulario{
+            width: 400px;
+            height: 200px;
+            background-color: rgb(62, 178, 236);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section id="formulario">
+        <h1>Brasileiro ou Estrangeiro?</h1>
+        Qual seu país? <input type="text" name="txtp" id="txtp">
+        <input type="button" value="Verificar" onclick="verificar()">
+        <div id="res"></div>
+    </section>
+
+    <script>
+        function verificar(){
+            var txt = window.document.querySelector('input#txtp')//conectando no input text
+            var res = window.document.querySelector('div#res')//conectando na div resultado
+            var pais = String(txt.value)//precisou converter para string 
+            var fundo = window.document.querySelector('section#formulario')//conectando na section
+
+            res.innerHTML = `<p> Seu pais de origem é o <strong>${pais}!</strong></p>`
+
+            if(pais == 'Brasil'){//se for igual brasil
+                res.innerHTML += `Você é Brasileiro!`//escreva você é brasileiro
+                fundo.style.background = 'green'//pinte fundo da section de verde
+                
+            }else{
+                res.innerHTML += `Você é Estrangeiro!`//se for diferente escreva você estrangeiro
+                fundo.style.background = 'rgb(62, 178, 236)'//pinte fundo da section de azul
+            }
+        }
+    </script>
+</body>
+</html>
